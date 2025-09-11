@@ -1,23 +1,69 @@
 import { Card, CardContent, CardFooter, CardHeader } from "../ui/card";
+import { Badge } from "../ui/badge";
+import { Brain, Target, Zap, Gamepad2 } from "lucide-react";
 
 export default function Introduction() {
 
-    return(
-        <Card>
-            <CardHeader>
-              <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
-      Introdução
-    </h3>
-            </CardHeader>
-            <CardContent className="grid gap-6">
-              <p>O jogo Flappy Bird, apesar de sua simplicidade, apresenta um desafio interessante para a área de Inteligência Artificial (IA). A dificuldade está no fato de que o agente recebe como entrada apenas imagens em pixels e a pontuação, não havendo informações explícitas sobre o estado do jogo. Nesse contexto, o objetivo do trabalho foi desenvolver um agente autônomo capaz de jogar Flappy Bird com desempenho superior ao humano, utilizando técnicas de aprendizado por reforço (Reinforcement Learning – RL) em conjunto com redes neurais profundas (Deep Q-Network – DQN). A pesquisa se insere na linha de estudos que aplicam IA em jogos digitais como forma de validar algoritmos de aprendizado em ambientes controlados, mas complexos</p>
-            </CardContent>
-            <CardFooter>
-              <h4>Objetivo principal</h4>
-              <blockquote className="mt-6 border-l-2 pl-6 italic">
-                Desenvolver uma rede neural profunda capaz de processar diretamente os pixels brutos da tela e determinar as ações a serem executadas. Sugerimos empregar técnicas de aprendizado por reforço para o treinamento do agente e sua execução no jogo.
-              </blockquote>
-            </CardFooter>
-          </Card>
-    );
+  return (
+    <div className="space-y-8">
+      {/* Hero Section */}
+      <Card className="w-full bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20 shadow-xl">
+        <CardHeader className="text-center pb-4">
+          <div className="flex justify-center mb-4">
+            <div className="p-3 rounded-full bg-primary/10">
+              <Brain className="h-8 w-8 text-primary" />
+            </div>
+          </div>
+          <h3 className="scroll-m-20 text-3xl font-bold tracking-tight bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+            Introdução
+          </h3>
+          <div className="flex flex-wrap justify-center gap-2 mt-4">
+            <Badge variant="secondary" className="text-xs">
+              <Zap className="h-3 w-3 mr-1" />
+              Deep Learning
+            </Badge>
+            <Badge variant="secondary" className="text-xs">
+              <Gamepad2 className="h-3 w-3 mr-1" />
+              Reinforcement Learning
+            </Badge>
+            <Badge variant="secondary" className="text-xs">
+              <Brain className="h-3 w-3 mr-1" />
+              Neural Networks
+            </Badge>
+          </div>
+        </CardHeader>
+        <CardContent className="text-center">
+          <p className="text-base sm:text-lg leading-relaxed text-muted-foreground max-w-4xl mx-auto">
+            O jogo <strong className="text-primary">Flappy Bird</strong>, apesar de sua simplicidade, apresenta um desafio interessante para a área de <strong className="text-primary">Inteligência Artificial (IA)</strong>. A dificuldade está no fato de que o agente recebe como entrada apenas imagens em pixels e a pontuação, não havendo informações explícitas sobre o estado do jogo.
+          </p>
+        </CardContent>
+      </Card>
+
+      {/* Main Content */}
+      <Card className="w-full shadow-lg">
+        <CardContent className="pt-6">
+          <p className="text-sm sm:text-base leading-relaxed mb-6">
+            Nesse contexto, o objetivo do trabalho foi desenvolver um agente autônomo capaz de jogar Flappy Bird com desempenho superior ao humano, utilizando técnicas de <strong className="text-primary">aprendizado por reforço (Reinforcement Learning – RL)</strong> em conjunto com <strong className="text-primary">redes neurais profundas (Deep Q-Network – DQN)</strong>. A pesquisa se insere na linha de estudos que aplicam IA em jogos digitais como forma de validar algoritmos de aprendizado em ambientes controlados, mas complexos.
+          </p>
+        </CardContent>
+      </Card>
+
+      {/* Objectives Section */}
+      <Card className="w-full bg-gradient-to-r from-accent/5 to-primary/5 border-accent/20 shadow-lg">
+        <CardHeader>
+          <div className="flex items-center gap-3">
+            <div className="p-2 rounded-lg bg-accent/10">
+              <Target className="h-5 w-5 text-accent" />
+            </div>
+            <h4 className="text-xl font-semibold">Objetivo Principal</h4>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <blockquote className="text-sm sm:text-base leading-relaxed italic border-l-4 border-accent pl-6 bg-background/50 p-4 rounded-r-lg">
+            Desenvolver uma rede neural profunda capaz de processar diretamente os pixels brutos da tela e determinar as ações a serem executadas. Sugerimos empregar técnicas de aprendizado por reforço para o treinamento do agente e sua execução no jogo.
+          </blockquote>
+        </CardContent>
+      </Card>
+    </div>
+  );
 }
