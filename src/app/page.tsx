@@ -18,12 +18,10 @@ import {
 } from "@/components/ui/tabs"
 
 import Introduction from "@/components/base/introduction"
-import Methods from "@/components/base/methods"
 import Glossary from "@/components/base/glossary"
 import Results from "@/components/base/results"
 import Discussion from "@/components/base/discussion"
 import References from "@/components/base/references"
-import NeuralNetwork from "@/components/base/neuralNetwork"  
 import Methodology from "@/components/base/methodology"
 
 
@@ -34,11 +32,9 @@ export default function Home() {
         <TabsList className="flex flex-wrap justify-center mx-auto mb-6">
           <TabsTrigger value="introduction">Introdução</TabsTrigger>
           <TabsTrigger value="methodology">Metodologia</TabsTrigger>
-          <TabsTrigger value="methods">Métodos</TabsTrigger>
           <TabsTrigger value="glossary">Glossário</TabsTrigger>
           <TabsTrigger value="results">Resultados</TabsTrigger>
           <TabsTrigger value="discussion">Discussão</TabsTrigger>
-          <TabsTrigger value="neuralNetwork">Redes neurais</TabsTrigger>
           <TabsTrigger value="references">Referências</TabsTrigger>
         </TabsList>
 
@@ -48,9 +44,6 @@ export default function Home() {
         <TabsContent value="methodology">
           <Methodology />
         </TabsContent>
-        <TabsContent value="methods">
-          <Methods />
-        </TabsContent>
         <TabsContent value="glossary">
           <Glossary />
         </TabsContent>
@@ -59,9 +52,6 @@ export default function Home() {
         </TabsContent>
         <TabsContent value="discussion">
           <Discussion />
-        </TabsContent>
-        <TabsContent value="neuralNetwork">
-          <NeuralNetwork />
         </TabsContent>
         <TabsContent value="references">
           <References />
