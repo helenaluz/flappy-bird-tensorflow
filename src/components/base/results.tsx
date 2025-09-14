@@ -5,17 +5,15 @@ export default function Results() {
     return (
     <Card className="shadow-md rounded-2xl p-4">
       <CardHeader className="!p-2">
-        <CardTitle className="text-2xl">Resultados e Discussão</CardTitle>
+        <CardTitle className="text-2xl">Resultados e discussão</CardTitle>
       </CardHeader>
-      <CardContent className="!p-2 text-sm space-y-3">
+      <CardContent className="!p-2 text-sm space-y-3 text-justify">
         <p>
-          Nossos achados demonstram que
-          o aprendizado profundo por reforço é um passo na direção certa e pode ser
-          expandido.
+          O artigo demonstra que o aprendizado de reforço profundo pode ser aplicado e é um passo na direção certa, podendo ser expandido e generalizado.
         </p>
         <p>
-          O Q-learning profundo provou ser mais eficiente que humanos, sendo o algoritmo
-          essencial. Redes neurais profundas desempenham papel fundamental em permitir
+          O Q-learning profundo, conforme resultados do artigo, provou ser mais eficiente que humanos na tarefa proposta. 
+          Redes neurais profundas desempenham papel fundamental em permitir
           que o computador compreenda o melhor resultado possível no jogo.
         </p>
         <p>
@@ -30,9 +28,7 @@ export default function Results() {
           eficiente consegue lidar com essas condições sem perda significativa de precisão.
         </p>
         <p>
-          O agente treinado (Flappy Bird) agora praticamente não morre. Esse conceito
-          central pode ser aplicado em outros jogos, como Mario e Temple Run, para
-          aumentar a precisão dos resultados.
+          O agente treinado, quando coloca em atuação no jogo, praticamente não morre e evita os obstáculos do mesmo de forma quase perpétua. Conforme anterior dito, o algoritmo e técnica propostas podem ser aplicados em outros jogos, como Mario e Temple Run.
         </p>
       </CardContent>
       <CardFooter className="!p-2 flex justify-center">
