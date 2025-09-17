@@ -1,108 +1,185 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import {
+  Target,
+  Brain,
+  Cpu,
+  Settings,
+  Zap,
+  Layers,
+  Database,
+  BarChart3,
+  CheckCircle,
+  ArrowRight
+} from "lucide-react"
 
 export default function Methodology() {
   return (
-    <div className="grid gap-6 md:grid-cols-2 p-6">
-      <Card className="shadow-md rounded-2xl">
-        <CardHeader className="!p-4">
-          <CardTitle>Pré-requisitos</CardTitle>
-        </CardHeader>
-        <CardContent className="text-sm text-justify">
-          <p className="mb-3">
-            Para a execução do projeto, é necessário um dispositivo com Windows 10, Linux ou Mac, e, neste, Python 3.6 (64-bit).  
-            Além disso, para o desenvolvimento, são requeridas as seguintes dependências:
-          </p>
-          <ul className="ml-6 list-disc [&>li]:mt-1">
-            <li>TensorFlow</li>
-            <li>Keras</li>
-            <li>Pygame</li>
-            <li>Scikit-image</li>
-            <li>OpenCV-Python</li>
-          </ul>
-          <p className="mt-3 text-sm">
-            Observa-se que o TensorFlow é uma biblioteca para construir e treinar modelos, enquanto o Keras, rodando sobre o TensorFlow, é uma biblioteca de Deep Learning. O Pygame é utilizado na criação de interfaces gráficas voltadas ao desenvolvimento de jogos. O Scikit-Image e o OpenCV, por sua vez, são bibliotecas de processamento de imagens. 
-          </p>
-        </CardContent>
-      </Card>
+    <div className="space-y-8">
+      {/* Header Section */}
+      <div className="text-center space-y-4">
+        <h2 className="text-3xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+          Metodologia
+        </h2>
+        <p className="text-muted-foreground max-w-2xl mx-auto">
+          Nossa abordagem metodológica combina diferentes técnicas de machine learning e redes neurais para criar um agente inteligente capaz de jogar Flappy Bird.
+        </p>
+      </div>
 
-      <Card className="shadow-md rounded-2xl">
-        <CardHeader className="!p-4">
-          <CardTitle>Arquitetura</CardTitle>
-        </CardHeader>
-        <CardContent className="text-sm">
-          <p className="mb-3">
-            A rede neural usada para treinar o agente se utiliza de uma arquitetura baseade em:
-          </p>
-          <ul className="ml-6 list-disc [&>li]:mt-1">
-            <li>Conversão das imagens para grayscale.</li>
-            <li>Corte para 80 x 80 pixels com a finalidade de economizar memória.</li>
-            <li>Empilhamento de 4 frames antes de alimentar a rede neural.</li>
-            <li>Entrada bruta dos pixels para a rede decidir ações com base na situação.</li>
-            <li>Uso de CPU e GPU para processamento.</li>
-          </ul>
-          <p className="mt-3 text-sm">
-            Para a remoção de ruídos e, consequentemente, melhorar a precisão, o fundo/background é removido.
-          </p>
-        </CardContent>
-      </Card>
+      {/* Cards Grid */}
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+        {/* Desafios Iniciais */}
+        <Card className="shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-l-primary/50">
+          <CardHeader className="pb-3">
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-primary/10">
+                <Target className="h-5 w-5 text-primary" />
+              </div>
+              <CardTitle className="text-xl">Desafios Iniciais</CardTitle>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 text-sm">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                <span>Exibir imagens corretamente</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                <span>Mover elementos do jogo</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                <span>Definir condições de game over</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm">
+                <CheckCircle className="h-4 w-4 text-green-500" />
+                <span>Adicionar melhorias</span>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
-      {/* Desafios Iniciais */}
-      <Card className="shadow-md rounded-2xl">
-        <CardHeader>
-          <CardTitle>Desafios iniciais</CardTitle>
-        </CardHeader>
-        <CardContent className="text-sm">
-          - Exibir imagens corretamente <br />
-          - Mover elementos do jogo <br />
-          - Definir condições de game over <br />
-          - Adicionar melhorias
-        </CardContent>
-      </Card>
+        {/* Redes Neurais Aplicadas */}
+        <Card className="shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-l-accent/50">
+          <CardHeader className="pb-3">
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-accent/10">
+                <Brain className="h-5 w-5 text-accent" />
+              </div>
+              <CardTitle className="text-xl">Redes Neurais Testadas</CardTitle>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <Badge variant="outline" className="text-xs">RNN</Badge>
+                <span className="text-sm">Memória de estados anteriores</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <Badge variant="outline" className="text-xs">Modular</Badge>
+                <span className="text-sm">Subpartes independentes</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <Badge variant="outline" className="text-xs">Seq2Seq</Badge>
+                <span className="text-sm">Encoder-decoder para sequências</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <Badge variant="outline" className="text-xs">DNN</Badge>
+                <span className="text-sm">Múltiplas camadas ocultas</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <Badge variant="secondary" className="text-xs">CNN/DQN</Badge>
+                <span className="text-sm font-medium">Processar imagens e decidir ações</span>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
-      {/* Redes Neurais Aplicadas */}
-      <Card className="shadow-md rounded-2xl">
-        <CardHeader>
-            <b><h1>Teste</h1></b>
-        </CardHeader>
-        <CardContent className="text-sm">
-          - <b>RNN</b>: memória de estados anteriores <br />
-          - <b>Redes Modulares</b>: subpartes independentes <br />
-          - <b>Seq2Seq</b>: encoder-decoder para sequências <br />
-          - <b>DNN</b>: múltiplas camadas ocultas <br />
-          - <b>CNN/DQN</b>: processar imagens e decidir ações
-        </CardContent>
-      </Card>
+        {/* Processo de Machine Learning */}
+        <Card className="shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-l-blue-500/50">
+          <CardHeader className="pb-3">
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-blue-500/10">
+                <Cpu className="h-5 w-5 text-blue-500" />
+              </div>
+              <CardTitle className="text-xl">Processo de ML</CardTitle>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <Zap className="h-4 w-4 text-yellow-500 mt-0.5" />
+                <div>
+                  <span className="text-sm font-medium">Pré-processamento:</span>
+                  <span className="text-sm text-muted-foreground ml-1">grayscale, resize, remover ruído</span>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <BarChart3 className="h-4 w-4 text-green-500 mt-0.5" />
+                <div>
+                  <span className="text-sm font-medium">Recompensas:</span>
+                  <span className="text-sm text-muted-foreground ml-1">+1 (cano), -1 (morte), +0.1 (sobrevivência)</span>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Settings className="h-4 w-4 text-purple-500 mt-0.5" />
+                <div>
+                  <span className="text-sm font-medium">Q-Learning:</span>
+                  <span className="text-sm text-muted-foreground ml-1">com Adam optimizer</span>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Database className="h-4 w-4 text-orange-500 mt-0.5" />
+                <div>
+                  <span className="text-sm font-medium">Experience Replay:</span>
+                  <span className="text-sm text-muted-foreground ml-1">para treino estável</span>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
-
-      <Card className="shadow-md rounded-2xl">
-        <CardHeader>
-          <CardTitle>Processo de Machine Learning</CardTitle>
-        </CardHeader>
-        <CardContent className="text-sm">
-          - Pré-processamento: grayscale, resize, remover ruído <br />
-          - Recompensas: +1 (cano), -1 (morte), +0.1 (sobrevivência) <br />
-          - Q-Learning com Adam optimizer <br />
-          - Experience Replay para treino estável
-        </CardContent>
-      </Card>
-
-      {/* Treinamento */}
-      <Card className="shadow-md rounded-2xl">
-        <CardHeader className="!pb-0">
-            <CardTitle>Treinamento</CardTitle>
-        </CardHeader>
-        <CardContent className="text-sm">
-            <ul className="my-4 mt-0 ml-6 list-disc [&>li]:mt-1">
-            <li>Learning rate: 1e-6</li>
-            <li>Fator de desconto: 0.99</li>
-            <li>Replay memory: 50.000</li>
-            <li>Batch size: 32</li>
-            <li>Atualização da rede alvo: 1000 iterações</li>
-            <li>Framework: TensorFlow</li>
-            </ul>
-        </CardContent>
-    </Card>
-
+        {/* Treinamento */}
+        <Card className="shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-l-green-500/50">
+          <CardHeader className="pb-3">
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-lg bg-green-500/10">
+                <Layers className="h-5 w-5 text-green-500" />
+              </div>
+              <CardTitle className="text-xl">Parâmetros de Treinamento</CardTitle>
+            </div>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div className="grid grid-cols-1 gap-3">
+              <div className="flex justify-between items-center p-2 bg-muted/50 rounded-lg">
+                <span className="text-sm font-medium">Learning rate:</span>
+                <Badge variant="secondary">1e-6</Badge>
+              </div>
+              <div className="flex justify-between items-center p-2 bg-muted/50 rounded-lg">
+                <span className="text-sm font-medium">Fator de desconto:</span>
+                <Badge variant="secondary">0.99</Badge>
+              </div>
+              <div className="flex justify-between items-center p-2 bg-muted/50 rounded-lg">
+                <span className="text-sm font-medium">Replay memory:</span>
+                <Badge variant="secondary">50.000</Badge>
+              </div>
+              <div className="flex justify-between items-center p-2 bg-muted/50 rounded-lg">
+                <span className="text-sm font-medium">Batch size:</span>
+                <Badge variant="secondary">32</Badge>
+              </div>
+              <div className="flex justify-between items-center p-2 bg-muted/50 rounded-lg">
+                <span className="text-sm font-medium">Atualização rede alvo:</span>
+                <Badge variant="secondary">1000 iterações</Badge>
+              </div>
+              <div className="flex justify-between items-center p-2 bg-muted/50 rounded-lg">
+                <span className="text-sm font-medium">Framework:</span>
+                <Badge variant="outline">TensorFlow</Badge>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   )
 }

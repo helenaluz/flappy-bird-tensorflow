@@ -22,13 +22,17 @@ import Glossary from "@/components/base/glossary"
 import Results from "@/components/base/results"
 import Discussion from "@/components/base/discussion"
 import References from "@/components/base/references"
+import NeuralNetwork from "@/components/base/neuralNetwork"
 import Methodology from "@/components/base/methodology"
+import { ModeToggle } from "@/components/base/togglers/ThemeToggler"
 
 
 export default function Home() {
   return (
-    <div className="flex w-full justify-center mt-6">
-      <Tabs defaultValue="account" className="w-full max-w-6xl px-20">
+    <div className="min-h-screen bg-background">
+      <ModeToggle />
+      <div className="container mx-auto px-4 py-6 max-w-7xl">
+        <Tabs defaultValue="account" className="w-full max-w-6xl px-20">
         <TabsList className="flex flex-wrap justify-center mx-auto mb-6">
           <TabsTrigger value="introduction">Introdução</TabsTrigger>
           <TabsTrigger value="methodology">Metodologia</TabsTrigger>
@@ -57,6 +61,7 @@ export default function Home() {
           <References />
         </TabsContent>
       </Tabs>
+      </div>
     </div>
   )
 }
