@@ -24,6 +24,7 @@ import Discussion from "@/components/base/discussion"
 import References from "@/components/base/references"
 import NeuralNetwork from "@/components/base/neuralNetwork"
 import Methodology from "@/components/base/methodology"
+import TensorFlow from "@/components/base/tensorflow"
 import { ModeToggle } from "@/components/base/togglers/ThemeToggler"
 
 
@@ -32,35 +33,39 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <ModeToggle />
       <div className="container mx-auto px-4 py-6 max-w-7xl">
-        <Tabs defaultValue="account" className="w-full max-w-6xl px-20">
-        <TabsList className="flex flex-wrap justify-center mx-auto mb-6">
-          <TabsTrigger value="introduction">Introdução</TabsTrigger>
-          <TabsTrigger value="methodology">Metodologia</TabsTrigger>
-          <TabsTrigger value="glossary">Glossário</TabsTrigger>
-          <TabsTrigger value="results">Resultados</TabsTrigger>
-          <TabsTrigger value="discussion">Discussão</TabsTrigger>
-          <TabsTrigger value="references">Referências</TabsTrigger>
-        </TabsList>
+        <Tabs defaultValue="introduction" className="w-full max-w-6xl px-20">
+          <TabsList className="flex flex-wrap justify-center mx-auto mb-6">
+            <TabsTrigger value="introduction">Introdução</TabsTrigger>
+            <TabsTrigger value="methodology">Metodologia</TabsTrigger>
+            <TabsTrigger value="tensorflow">TensorFlow</TabsTrigger>
+            <TabsTrigger value="glossary">Glossário</TabsTrigger>
+            <TabsTrigger value="results">Resultados</TabsTrigger>
+            <TabsTrigger value="discussion">Discussão</TabsTrigger>
+            <TabsTrigger value="references">Referências</TabsTrigger>
+          </TabsList>
 
-        <TabsContent value="introduction">
-          <Introduction />
-        </TabsContent>
-        <TabsContent value="methodology">
-          <Methodology />
-        </TabsContent>
-        <TabsContent value="glossary">
-          <Glossary />
-        </TabsContent>
-        <TabsContent value="results">
-          <Results />
-        </TabsContent>
-        <TabsContent value="discussion">
-          <Discussion />
-        </TabsContent>
-        <TabsContent value="references">
-          <References />
-        </TabsContent>
-      </Tabs>
+          <TabsContent value="introduction">
+            <Introduction />
+          </TabsContent>
+          <TabsContent value="methodology">
+            <Methodology />
+          </TabsContent>
+          <TabsContent value="tensorflow">
+            <TensorFlow />
+          </TabsContent>
+          <TabsContent value="glossary">
+            <Glossary />
+          </TabsContent>
+          <TabsContent value="results">
+            <Results />
+          </TabsContent>
+          <TabsContent value="discussion">
+            <Discussion />
+          </TabsContent>
+          <TabsContent value="references">
+            <References />
+          </TabsContent>
+        </Tabs>
       </div>
     </div>
   )
