@@ -6,6 +6,22 @@ export default function Introduction() {
 
   return (
     <div className="space-y-8">
+      {/* Paper Title and Authors */}
+      <Card className="w-full bg-gradient-to-br from-primary/10 to-secondary/10 border-primary/10 shadow-lg">
+        <CardHeader className="text-center pb-2">
+          <h2 className="text-lg text-muted-foreground mb-2">International Conference on IoT based Control Networks and Intelligent Systems (ICICNIS 2020)</h2>
+          <h3 className="text-2xl font-bold mb-1">Flappy Bird Automation using TensorFlow</h3>
+          <div className="text-base font-medium mb-1">Dr. Kachapuram BasavaRaju<sup>1*</sup>, Dr. V. Kakulapati<sup>2</sup>, Vinay Manikant<sup>3</sup></div>
+          <div className="text-sm text-muted-foreground mb-1">
+            <span className="block">Assoc. Dept. of CSE, SreeNidhi Institute of Science & Technology, JNTUH, Hyderabad, Telangana, India</span>
+            <span className="block">Professor Dept. of IT, SreeNidhi Institute of Science & Technology, JNTUH, Hyderabad, Telangana, India</span>
+            <span className="block">Department of IT, SreeNidhi Institute of Science & Technology, JNTUH, Hyderabad, Telangana, India</span>
+          </div>
+          <div className="text-xs text-muted-foreground">
+            e-mail: basavarajuk@sreenidhi.edu.in, vldms@yahoo.com, manikant.vinnu@gmail.com
+          </div>
+        </CardHeader>
+      </Card>
       {/* Hero Section */}
       <Card className="w-full bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20 shadow-xl">
         <CardHeader className="text-center pb-4">

@@ -15,7 +15,12 @@ import {
 } from "@/components/ui/dropdown-menu"
 
 export function ModeToggle() {
-  const { setTheme, theme } = useTheme()
+  const { setTheme, theme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const themes = [
     { value: "light", label: "Light", icon: Sun, description: "Clean and bright" },
@@ -24,9 +29,11 @@ export function ModeToggle() {
     { value: "purple", label: "Purple", icon: Zap, description: "Creative purple" },
     { value: "sunset", label: "Sunset", icon: Sunset, description: "Warm sunset" },
     { value: "system", label: "System", icon: Monitor, description: "Follow system" },
-  ]
+  ];
 
-  const currentTheme = themes.find(t => t.value === theme) || themes[1]
+  const currentTheme = themes.find(t => t.value === theme) || themes[1];
+
+  if (!mounted) return null;
 
   return (
     <div className="fixed top-4 right-4 z-50">
@@ -62,5 +69,5 @@ export function ModeToggle() {
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
-  )
+  );
 }
