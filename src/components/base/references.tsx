@@ -4,7 +4,6 @@ import { useMemo } from "react"
 export default function References() {
   const refs = useMemo(() => {
     return [
-      [
         "Matheus G. Cordeiro, Paulo Bruno S. Serafim, Yuri Lenon B. Nogueira, Creto A. Vidal, Joaquim B. Cavalcante Neto. “A Minimal Training Strategy to Play Flappy Bird Indefinitely with NEAT”. SBGames, 2019. ISBN:978-1-7281-4638-6",
         "Anton Nijholt. “More Playful User Interfaces”. https://link.springer.com/book/0.1007%2F978-981-287-546-4",
         "Volodymyr Mnih, Koray Kavukcuoglu, David Silver. “Playing Atari with Deep Reinforcement Learning”. https://arxiv.org/pdf/1312.5602.pdf",
@@ -21,7 +20,6 @@ export default function References() {
         "Yunshu Du. “Introduction to Deep Q-network”. Washington State University, 10 Oct 2016.",
         "https://people.ece.cornell.edu/land/courses/ece5760/FinalProjects/s2014/alt53_akt52_sm2354/alt53_akt52_sm2354/index.html",
         "https://www.amusementrc.com/dev/Flappy%20Bird.pdf"
-      ]
     ]
   }, [])
 
@@ -31,9 +29,9 @@ export default function References() {
         <CardTitle className="text-2xl">Referências</CardTitle>
       </CardHeader>
       <CardContent className="!p-2 text-sm">
-        <ul className="list-disc list-inside space-y-1">
+        <ul className="list-disc space-y-1 text-wrap">
           {refs.map((ref, index) => (
-            <li key={index}>{ref}</li>
+            <li key={index} className="wrap-anywhere">{ref}</li>
           ))}
         </ul>
       </CardContent>
